@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  medgrid-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: medgrid_api
+    ports:
+      - "9100:9100"
+    environment:
+      - HOST=0.0.0.0
+      - PORT=9100
+    restart: unless-stopped
